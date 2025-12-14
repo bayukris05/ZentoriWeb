@@ -68,7 +68,7 @@ class Barang extends BaseModel
             ]);
         } catch (\PDOException $e) {
             error_log("Error createBarang: " . $e->getMessage());
-            return false;
+            return $e->getMessage();
         }
     }
 
@@ -92,7 +92,7 @@ class Barang extends BaseModel
             ]);
         } catch (\PDOException $e) {
             error_log("Error updateBarang: " . $e->getMessage());
-            return false;
+            return $e->getMessage();
         }
     }
 

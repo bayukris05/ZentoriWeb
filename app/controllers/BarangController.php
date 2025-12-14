@@ -65,10 +65,10 @@ class BarangController
 
             $result = $this->barangModel->createBarang($data);
 
-            if ($result) {
+            if ($result === true) {
                 echo json_encode(['success' => true, 'message' => 'Barang berhasil ditambahkan']);
             } else {
-                echo json_encode(['success' => false, 'message' => 'Gagal menambahkan barang']);
+                echo json_encode(['success' => false, 'message' => 'Gagal menambahkan barang: ' . $result]);
             }
         }
     }
@@ -110,10 +110,10 @@ class BarangController
 
             $result = $this->barangModel->updateBarang($id, $data);
 
-            if ($result) {
+            if ($result === true) {
                 echo json_encode(['success' => true, 'message' => 'Barang berhasil diupdate']);
             } else {
-                echo json_encode(['success' => false, 'message' => 'Gagal mengupdate barang']);
+                echo json_encode(['success' => false, 'message' => 'Gagal mengupdate barang: ' . $result]);
             }
         }
     }
