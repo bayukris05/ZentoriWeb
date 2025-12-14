@@ -46,10 +46,10 @@ class BarangController
                 'nama_barang' => $_POST['nama_barang'] ?? '',
                 'id_kategori' => $_POST['id_kategori'] ?? '',
                 'satuan' => $_POST['satuan'] ?? '',
-                'stok' => $_POST['stok'] ?? 0,
-                'harga_beli' => $_POST['harga_beli'] ?? 0,
-                'harga_jual' => $_POST['harga_jual'] ?? 0,
-                'expired_date' => $_POST['expired_date'] ?? null,
+                'stok' => filter_var($_POST['stok'] ?? 0, FILTER_SANITIZE_NUMBER_INT),
+                'harga_beli' => filter_var($_POST['harga_beli'] ?? 0, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+                'harga_jual' => filter_var($_POST['harga_jual'] ?? 0, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+                'expired_date' => !empty($_POST['expired_date']) ? $_POST['expired_date'] : null,
                 'created_at' => date('Y-m-d H:i:s')
             ];
 
@@ -92,10 +92,10 @@ class BarangController
                 'nama_barang' => $_POST['nama_barang'] ?? '',
                 'id_kategori' => $_POST['id_kategori'] ?? '',
                 'satuan' => $_POST['satuan'] ?? '',
-                'stok' => $_POST['stok'] ?? 0,
-                'harga_beli' => $_POST['harga_beli'] ?? 0,
-                'harga_jual' => $_POST['harga_jual'] ?? 0,
-                'expired_date' => $_POST['expired_date'] ?? null
+                'stok' => filter_var($_POST['stok'] ?? 0, FILTER_SANITIZE_NUMBER_INT),
+                'harga_beli' => filter_var($_POST['harga_beli'] ?? 0, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+                'harga_jual' => filter_var($_POST['harga_jual'] ?? 0, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+                'expired_date' => !empty($_POST['expired_date']) ? $_POST['expired_date'] : null
             ];
 
             if (empty($data['nama_barang']) || empty($data['id_kategori']) || empty($data['satuan'])) {
