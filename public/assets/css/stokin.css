@@ -1,0 +1,512 @@
+.stockin-page-content {
+  padding: 2rem;
+  background: #f5f7fa;
+  min-height: calc(100vh - 100px);
+}
+
+.stockin-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.stockin-header-left {
+  flex: 1;
+}
+
+.stockin-page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.25rem;
+}
+
+.stockin-page-subtitle {
+  color: #718096;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.stockin-btn-add {
+  background: #fb7185;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.stockin-btn-add:hover {
+  background: #e11d48;
+  transform: translateY(-1px);
+}
+
+.stockin-content-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.stockin-card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stockin-card-header h4 {
+  margin: 0;
+  color: #1a202c;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.stockin-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stockin-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.stockin-search-box i {
+  position: absolute;
+  left: 14px;
+  color: #a0aec0;
+  font-size: 0.875rem;
+  z-index: 1;
+}
+
+.stockin-search-input {
+  width: 280px;
+  padding: 0.625rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background: #f7fafc;
+  transition: all 0.2s;
+}
+
+.stockin-search-input:focus {
+  outline: none;
+  border-color: #fb7185;
+  box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.25);
+  background: white;
+}
+
+.stockin-search-input::placeholder {
+  color: #a0aec0;
+}
+
+.stockin-date-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stockin-period-selector {
+  position: relative;
+}
+
+.stockin-period-btn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 0.625rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 150px;
+  justify-content: space-between;
+}
+
+.stockin-period-btn:hover {
+  border-color: #fb7185;
+  background: rgba(251, 113, 133, 0.12);
+}
+
+.stockin-period-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none;
+  margin-top: 0.25rem;
+}
+
+.stockin-period-dropdown.show {
+  display: block;
+}
+
+.stockin-period-option {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 0.875rem;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.stockin-period-option:hover {
+  background: rgba(251, 113, 133, 0.12);
+}
+
+.stockin-period-option.active {
+  background: #fb7185;
+  color: white;
+}
+
+.stockin-date-inputs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.stockin-date-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stockin-date-input,
+.stockin-month-select,
+.stockin-year-select {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background: #f7fafc;
+  transition: all 0.2s;
+  min-width: 120px;
+}
+
+.stockin-date-input:focus,
+.stockin-month-select:focus,
+.stockin-year-select:focus {
+  outline: none;
+  border-color: #fb7185;
+  box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.25);
+  background: white;
+}
+
+.stockin-filter-btn {
+  background: #fb7185;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.stockin-filter-btn:hover {
+  background: #e11d48;
+  transform: translateY(-1px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.stockin-table-wrapper {
+  overflow-x: auto;
+}
+
+.stockin-data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stockin-data-table thead th {
+  background: #f8fafc;
+  padding: 0.875rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.stockin-data-table tbody td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.875rem;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.stockin-data-table tbody tr {
+  transition: background 0.15s;
+}
+
+.stockin-data-table tbody tr:hover {
+  background: rgba(251, 113, 133, 0.12);
+}
+
+.stockin-date-cell {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.stockin-code-cell {
+  font-weight: 600;
+  color: #fb7185;
+}
+
+.stockin-item-cell {
+  color: #334155;
+  font-weight: 500;
+}
+
+.stockin-supplier-cell {
+  color: #64748b;
+}
+
+.stockin-quantity-cell {
+  font-weight: 600;
+}
+
+.stockin-quantity-positive {
+  color: #059669;
+}
+
+.stockin-description-cell {
+  color: #64748b;
+}
+
+.stockin-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.stockin-pagination-info {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.stockin-pagination-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.stockin-pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 6px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.stockin-pagination-btn:hover:not(:disabled) {
+  background: rgba(251, 113, 133, 0.12);
+  border-color: #fb7185;
+}
+
+.stockin-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stockin-pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 6px;
+  color: #64748b;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.stockin-pagination-page:hover {
+  background: rgba(251, 113, 133, 0.12);
+  border-color: #fb7185;
+}
+
+.stockin-pagination-page.active {
+  background: #fb7185;
+  border-color: #fb7185;
+  color: white;
+}
+
+.stockin-modal-content {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stockin-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.stockin-modal-title {
+  font-weight: 600;
+  color: #1a202c;
+  font-size: 1.125rem;
+}
+
+.stockin-modal-body {
+  padding: 1.5rem;
+}
+
+.stockin-form-label {
+  display: block;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.stockin-form-input,
+.stockin-form-select {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background: white;
+}
+
+.stockin-form-input:focus,
+.stockin-form-select:focus {
+  outline: none;
+  border-color: #fb7185;
+  box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.25);
+}
+
+.stockin-modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.stockin-btn-secondary {
+  background: #e2e8f0;
+  color: #4a5568;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stockin-btn-secondary:hover {
+  background: #cbd5e0;
+}
+
+.stockin-btn-primary {
+  background: #fb7185;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stockin-btn-primary:hover {
+  background: #e11d48;
+}
+
+@media (max-width: 1024px) {
+  .stockin-filter-container {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .stockin-search-box {
+    width: 250px;
+  }
+
+  .stockin-date-filter {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .stockin-card-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .stockin-filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stockin-search-box {
+    width: 100%;
+  }
+
+  .stockin-date-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stockin-date-inputs {
+    flex-direction: column;
+  }
+
+  .stockin-date-input-group {
+    flex-direction: column;
+  }
+}

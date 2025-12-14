@@ -1,0 +1,13 @@
+{
+  "name": "inventori/php-native",
+  "description": "Sistem inventori menggunakan PHP native.",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*"
+  }
+}

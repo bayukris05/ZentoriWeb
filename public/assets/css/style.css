@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #0f1729 0%, #1a2332 100%);
+  color: white;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar-header {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-header i {
+  font-size: 28px;
+  color: #fb7185;
+  min-width: 28px;
+}
+
+.sidebar-header span {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.collapsed .sidebar-header span {
+  display: none;
+}
+
+.sidebar-content {
+  padding: 20px 0;
+}
+
+.title-item {
+  padding: 20px 20px 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #6b7280;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed .title-item {
+  display: none;
+}
+
+.menu-item {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.sidebar.collapsed .menu-item {
+  padding: 12px 0;
+  justify-content: center;
+  gap: 0;
+}
+
+.menu-item i {
+  font-size: 18px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.menu-item span {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.collapsed .menu-item span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.menu-item:hover {
+  background-color: rgba(251, 113, 133, 0.12);
+  color: #fb7185;
+}
+
+.sidebar.collapsed .menu-item {
+  position: relative;
+}
+
+.sidebar.collapsed .menu-item::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 70px;
+  background: #4d1018;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1001;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.collapsed .menu-item:hover::after {
+  opacity: 1;
+}
+
+.menu-item.active {
+  background-color: rgba(251, 113, 133, 0.18);
+  color: #fb7185;
+  font-weight: 500;
+}
+
+.menu-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #fb7185;
+}
+
+.main-content {
+  margin-left: 260px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.expanded {
+  margin-left: 70px;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.sidebar-toggle {
+  font-size: 20px;
+  color: #374151;
+  cursor: pointer;
+  transition: left 0.3s ease;
+  position: fixed;
+  left: 270px;
+  top: 16px;
+  z-index: 1002;
+  background: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(168, 50, 65, 0.12);
+}
+
+.sidebar-toggle.collapsed {
+  left: 80px;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.notification-icon i {
+  font-size: 20px;
+  color: #6b7280;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 8px;
+  height: 8px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.profile-part {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.avatar-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2px;
+}
+
+.avatar-name h3 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.avatar-name p {
+  font-size: 12px;
+  margin: 0;
+  color: #6b7280;
+}
+
+#panah-bawah {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.dashboard-content {
+  padding: 25px 30px;
+  flex: 1;
+}
+
+.page-title h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 5px;
+}
+
+.page-title p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.card:hover {
+  box-shadow: 1px 2px 5px #c2c2c2ff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.title-card h6 {
+  font-size: 14px;
+}
+
+.title-card i {
+  font-size: 14px;
+}
+
+.detail-stok {
+  font-size: 13px;
+  color: #acacacff;
+}
+
+.badge-right {
+  background-color: #fdecec;
+  color: #ef4343;
+  padding: 4px 8px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.time-right {
+  font-size: 12px;
+  color: #acacacff;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-260px);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+    width: 260px;
+  }
+
+  .sidebar.collapsed {
+    width: 260px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .main-content.expanded {
+    margin-left: 0;
+  }
+
+  .sidebar-toggle {
+    left: 15px;
+  }
+
+  .sidebar-toggle.active {
+    left: 270px;
+  }
+
+  .sidebar-toggle.collapsed {
+    left: 15px;
+  }
+
+  .avatar-name {
+    display: none;
+  }
+
+  .sidebar.collapsed .menu-item span,
+  .sidebar.collapsed .sidebar-header span {
+    opacity: 1;
+    width: auto;
+  }
+
+  .sidebar.collapsed .menu-item,
+  .sidebar.collapsed .sidebar-header {
+    padding: 12px 20px;
+    justify-content: flex-start;
+  }
+
+  .sidebar.collapsed .menu-item::after {
+    display: none;
+  }
+}
+
+.inventory-status-expired {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.inventory-status-expiring-today {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.inventory-status-expiring-soon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.inventory-status-safe {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.inventory-status-none {
+  background: #f3f4f6;
+  color: #6b7280;
+}
