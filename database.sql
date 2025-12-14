@@ -29,7 +29,9 @@ INSERT INTO `users` (`id_users`, `nama`, `email`, `password`, `role`, `status`, 
 ('U001', 'Budi Santoso', 'budi@beautyshop.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 'active', '2024-01-01 02:00:00'),
 ('U002', 'Sari Dewi', 'sari@beautyshop.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'staff', 'active', '2024-01-02 03:00:00'),
 ('U003', 'Rina Melati', 'rina@beautyshop.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 'active', '2024-01-03 04:00:00'),
-('U004', 'Bella Sari', 'bella@gmail.com', '$2y$10$H8KMQJxDRReDzdCmbftPMeO68LgCJrJ1djH3ehRDlbah4GNbs/u.y', 'admin', 'active', '2025-01-01 10:00:00');
+('U004', 'Bella Sari', 'bella@gmail.com', '$2y$10$H8KMQJxDRReDzdCmbftPMeO68LgCJrJ1djH3ehRDlbah4GNbs/u.y', 'admin', 'active', '2025-01-01 10:00:00'),
+('U005', 'Najwa Aulia', 'najwa@gmail.com', '$2y$12$XC3en9rAYkwAnIEnBJ1WXeZ5NL0.KUBmM0ySs8npCWEOusFl8k8Cu', 'staff', 'active', '2025-01-01 10:00:00'),
+('U006', 'Avrilita Rufis Setya Ningrum', 'avril@gmail.com', '$2y$12$GhWS57hxglZCwKYXaVc1BO3.e3hwljWQSdT3ilCmAnIu.pa5ylJKG', 'staff', 'active', '2025-01-01 10:00:00');
 
 -- --------------------------------------------------------
 
