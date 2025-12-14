@@ -100,6 +100,7 @@ CREATE TABLE `barang` (
   `stok` int(11) NOT NULL DEFAULT 0,
   `harga_beli` decimal(15,2) NOT NULL,
   `harga_jual` decimal(15,2) NOT NULL,
+  `expired_date` date DEFAULT NULL,
   `status_stok` enum('available','low','empty') DEFAULT 'available',
   `status` enum('active','inactive') DEFAULT 'active',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -112,12 +113,12 @@ CREATE TABLE `barang` (
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `id_kategori`, `satuan`, `stok`, `harga_beli`, `harga_jual`, `status_stok`, `status`, `created_at`) VALUES
-('B001', 'Serum Vitamin C', 1, 'pcs', 30, 85000.00, 120000.00, 'available', 'active', '2024-01-20 03:00:00'),
-('B002', 'Foundation Matte', 2, 'pcs', 50, 65000.00, 95000.00, 'available', 'active', '2024-01-20 03:10:00'),
-('B003', 'Body Lotion Vanilla', 3, 'pcs', 100, 35000.00, 50000.00, 'available', 'active', '2024-01-20 03:20:00'),
-('B004', 'Shampoo Anti Dandruff', 4, 'botol', 80, 45000.00, 65000.00, 'available', 'active', '2024-01-20 03:30:00'),
-('B005', 'Parfum Floral', 5, 'pcs', 40, 120000.00, 180000.00, 'available', 'active', '2024-01-20 03:40:00');
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `id_kategori`, `satuan`, `stok`, `harga_beli`, `harga_jual`, `expired_date`, `status_stok`, `status`, `created_at`) VALUES
+('B001', 'Serum Vitamin C', 1, 'pcs', 30, 85000.00, 120000.00, '2025-12-31', 'available', 'active', '2024-01-20 03:00:00'),
+('B002', 'Foundation Matte', 2, 'pcs', 50, 65000.00, 95000.00, '2025-11-30', 'available', 'active', '2024-01-20 03:10:00'),
+('B003', 'Body Lotion Vanilla', 3, 'pcs', 100, 35000.00, 50000.00, '2026-06-30', 'available', 'active', '2024-01-20 03:20:00'),
+('B004', 'Shampoo Anti Dandruff', 4, 'botol', 80, 45000.00, 65000.00, '2025-08-15', 'available', 'active', '2024-01-20 03:30:00'),
+('B005', 'Parfum Floral', 5, 'pcs', 40, 120000.00, 180000.00, NULL, 'available', 'active', '2024-01-20 03:40:00');
 
 -- --------------------------------------------------------
 
