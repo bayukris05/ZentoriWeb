@@ -7,6 +7,7 @@ use App\controllers\DashboardController;
 use App\controllers\StokController;
 use App\controllers\SupplierController;
 use App\controllers\UserController;
+use App\controllers\SeederController;
 use App\middleware\AuthMiddleware;
 
 Router::add('GET', '/login', AuthController::class, 'login', [AuthMiddleware::class, 'redirectIfAuthenticated']);
@@ -45,6 +46,8 @@ Router::add('GET', '/barang/expired-report', StokController::class, 'expiredRepo
 Router::add('GET', '/stokin/expired-report', StokController::class, 'expiredReport', [AuthMiddleware::class, 'checkAuth']);
 Router::add('POST', '/barang/mark-expired-cleaned', StokController::class, 'markExpiredCleaned', [AuthMiddleware::class, 'checkAuth']);
 Router::add('GET', '/barang/expired-cleaned-history', StokController::class, 'expiredCleanedHistory', [AuthMiddleware::class, 'checkAuth']);
+
+Router::add('GET', '/run-seeder', SeederController::class, 'run');
 
 Router::add('GET', '/', function () {
     if (AuthController::checkAuth()) {
