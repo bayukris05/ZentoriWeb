@@ -62,7 +62,7 @@ function timeAgo($datetime) {
                         <h6 class="text-muted mb-2">Total Pemasukan</h6>
                         <i class="bi bi-arrow-down-left text-success"></i>
                     </div>
-                    <h2 class="mb-0 text-success" style="font-size: 24px;">Rp <?= number_format($stats['total_pemasukan'] ?? 0, 0, ',', '.') ?></h2>
+                    <h2 class="mb-0 text-success" style="font-size: 24px;">Rp <?= number_format($stats['total_pengeluaran'] ?? 0, 0, ',', '.') ?></h2>
                     <small class="text-muted">Bulan ini</small>
                 </div>
             </div>
@@ -74,7 +74,7 @@ function timeAgo($datetime) {
                         <h6 class="text-muted mb-2">Total Pengeluaran</h6>
                         <i class="bi bi-arrow-up-right text-danger"></i>
                     </div>
-                    <h2 class="mb-0 text-danger" style="font-size: 24px;">Rp <?= number_format($stats['total_pengeluaran'] ?? 0, 0, ',', '.') ?></h2>
+                    <h2 class="mb-0 text-danger" style="font-size: 24px;">Rp <?= number_format($stats['total_pemasukan'] ?? 0, 0, ',', '.') ?></h2>
                     <small class="text-muted">Bulan ini</small>
                 </div>
             </div>
