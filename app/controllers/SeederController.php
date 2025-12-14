@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\controllers;
 
-use App\Models\BaseModel;
+use App\models\BaseModel;
 use PDO;
 use Exception;
 
